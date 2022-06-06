@@ -14,10 +14,51 @@ document.documentElement.className = document.documentElement.className.replace(
 if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.watch.js", "webpro.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "require.js", "index.css"], "outOfDate":[]};
 </script>
   
-  <title>index</title>
+  <title>Vegas Casino</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
   <link rel="stylesheet" type="text/css" href="css/index.css?crc=277197561" id="pagesheet"/>
+
+
+  <link rel="manifest" href="/04/manifest.json">
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="/04/img/icons/icon-144x144.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-title" content="PWAConf" />
+
+    <!-- Подключение service worker -->
+    <script src="/04/app.js"></script>
+
+    <!-- Установка приложения с кнопки -->
+    <script>
+      let deferredPrompt = null;
+      
+     window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+    
+    async function install() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        console.log(deferredPrompt)
+        deferredPrompt.userChoice.then(function(choiceResult){
+        
+          if (choiceResult.outcome === 'accepted') {
+          console.log('Your PWA has been installed');
+          } else {
+          console.log('User chose to not install your PWA');
+          }
+          
+          deferredPrompt = null;
+          
+          });
+          
+        }
+      }
+    </script>
    </head>
  <body>
 
