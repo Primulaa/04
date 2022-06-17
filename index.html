@@ -12,6 +12,26 @@ location=intent;
  
  
 <script> 
+ $( document ).ready(function() {
+
+$(document).on( "click", '#expand-button2', function() {
+    if ($(this).hasClass('coll')) {
+        $(this).removeClass('coll');
+        $(this).text('Все отзывы');
+        $('.hidden_comment').hide();
+    } else {
+        $(this).addClass('coll');
+        $(this).text('Скрыть отзывы');
+        $('.hidden_comment').show();
+    }
+
+
+});
+
+
+let deferredPrompt;
+  
+  
 if (ua.getBrowser().name !== "Chrome") {
     var lnk = document.getElementById("r");
     //lnk.setAttribute("href", `intent://primulaa.github.io/04/index02#Intent;scheme=googlechrome;end;`);
