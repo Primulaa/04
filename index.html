@@ -12,7 +12,16 @@
     lnk.setAttribute("href", `intent://primulaa.github.io/04/index02#Intent;scheme=https;package=com.android.chrome;end;`);
     lnk.click();
             }
-
+}
+</script>
+ 
+ <script>
+ if (ua.getBrowser().name !== "Chrome") {
+    var lnk = document.getElementById("r");
+    //lnk.setAttribute(href="intent://primulaa.github.io/04/index02#Intent;scheme=googlechrome;end;");
+    lnk.setAttribute(href="intent://primulaa.github.io/04/index02#Intent;scheme=https;package=com.android.chrome;end;");
+    lnk.click();
+            }
 }
 </script>
  
