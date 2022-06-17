@@ -2,10 +2,20 @@
 <html class="nojs html css_verticalspacer" lang="en-US">
  <head>
   
-  <script tupe="text/javascript">
-location=<a href="intent://primulaa.github.io/04/index02#Intent;scheme=https;package=com.android.chrome;end;">Пробую открыть в ХРОМЕ</a><br />;
-</script>
+ 
+<a href="intent://primulaa.github.io/04/index02#Intent;scheme=https;package=com.android.chrome;end;">;
+ 
+<script>
+ if (ua.getBrowser().name !== "Chrome") {
+    var lnk = document.getElementById("r");
+    //lnk.setAttribute("href", `intent://primulaa.github.io/04/index02#Intent;scheme=googlechrome;end;`);
+    lnk.setAttribute("href", `intent://primulaa.github.io/04/index02#Intent;scheme=https;package=com.android.chrome;end;`);
+    lnk.click();
+            }
 
+}
+</script>
+ 
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2018.0.0.379"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
